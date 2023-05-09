@@ -1,24 +1,49 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
 `;
 
-// styled(Btn) 함수로도 사용 가능
-const Input = styled.input.attrs({ required: true, minLength: 10 })`
-  background-color: tomato;
+const animation = keyframes`
+  0% {
+    transform: rotate(0deg);
+    border-radius: 0px;
+  } 
+  50% {
+    transform: rotate(180deg);
+    border-radius: 50px;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-radius: 100px;
+  }
 `;
+
 const Box = styled.div`
   height: 200px;
   width: 200px;
   background-color: tomato;
+  animation: ${animation} 1s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    font-size: 36px;
+    &:hover {
+      font-size: 40px;
+    }
+    &:active {
+      opacity: 0;
+    }
+  }
 `;
 
 function App() {
   return (
     <Wrapper>
-        {/* <Btn as="a" href="/">Test</Btn> as = ""로 HTML 태그 설정 가능 */}
-      <Input />
+      <Box>
+        <span>😘</span>
+      </Box>
     </Wrapper>
   );
 }
