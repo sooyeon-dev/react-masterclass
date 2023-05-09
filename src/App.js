@@ -1,31 +1,25 @@
 import styled from "styled-components";
 
-const Father = styled.div`
+const Wrapper = styled.div`
   display: flex;
 `;
 
-const BoxOne = styled.div`
-  background-color: teal;
-  width: 100px;
-  height: 100px;
-`;
-
-const BoxTwo = styled.div`
+// styled(Btn) 함수로도 사용 가능
+const Input = styled.input.attrs({ required: true, minLength: 10 })`
   background-color: tomato;
-  width: 100px;
-  height: 100px;
 `;
-
-const Text = styled.span``;
+const Box = styled.div`
+  height: 200px;
+  width: 200px;
+  background-color: tomato;
+`;
 
 function App() {
   return (
-    <Father>
-      <BoxOne>
-        <Text>Hello</Text>
-      </BoxOne>
-      <BoxTwo />
-    </Father>
+    <Wrapper>
+        {/* <Btn as="a" href="/">Test</Btn> as = ""로 HTML 태그 설정 가능 */}
+      <Input />
+    </Wrapper>
   );
 }
 
