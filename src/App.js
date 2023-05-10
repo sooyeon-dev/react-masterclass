@@ -19,6 +19,10 @@ const animation = keyframes`
   }
 `;
 
+const Emoji = styled.span`
+  font-size: 36px;
+`;
+
 const Box = styled.div`
   height: 200px;
   width: 200px;
@@ -27,11 +31,8 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  span {
-    font-size: 36px;
-    &:hover {
-      font-size: 40px;
-    }
+  ${Emoji}:hover { // styled component 타겟팅
+    font-size: 98px;
     &:active {
       opacity: 0;
     }
@@ -42,7 +43,7 @@ function App() {
   return (
     <Wrapper>
       <Box>
-        <span>😘</span>
+        <Emoji as="p">😘</Emoji>
       </Box>
     </Wrapper>
   );
